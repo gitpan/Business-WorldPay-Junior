@@ -8,7 +8,7 @@
 use Test;
 use blib;
 BEGIN { plan tests => 1 };
-use Business::OnlinePayment::WorldPay::Junior;
+use Business::WorldPay::Junior;
 ok(1); # If we made it this far, we're ok.
 
 #########################

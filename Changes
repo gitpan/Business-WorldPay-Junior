@@ -1,5 +1,8 @@
 Revision history for Perl extension Business::WorldPay::Junior.
 
+1.06  Fri Mar 14 15:30:00 2003
+	- Updated documentation to reflect name change properly.
+
 1.05  Fri Mar 14 10:35:00 2003
 	- add check to ensure testMode isn't hacked to avoid actual payment
 	- Rename to avoid clash with Business::OnlinePayment API

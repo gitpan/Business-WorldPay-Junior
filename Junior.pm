@@ -23,7 +23,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw( ) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw( new register authorised callback errstr valid_callback_host );
-our $VERSION = '1.05';
+our $VERSION = '1.06';
 
 my %args = ();
 

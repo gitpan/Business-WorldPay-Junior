@@ -1,4 +1,4 @@
-Business::OnlinePayment::WorldPay::Junior version 1.00
+Business::WorldPay::Junior version 1.05
 ======================================================
 
 This module provides a simple way to handle transactions sent to WorldPay
@@ -75,9 +75,9 @@ WorldPay. That is the job of your script.
 To start using WorldPay::Junior you need to initialise the module in your
 script using the "new" method like so:
 
-use Business::OnlinePayment::WorldPay::Junior;
+use Business::WorldPay::Junior;
 
-my $wp = Business::OnlinePayment::WorldPay::Junior->new( db => 'worldpay',
+my $wp = Business::WorldPay::Junior->new( db => 'worldpay',
                                                   dbuser => 'worldpay',
                                                   dbpass => 'wppass',
                                                   host => 'localhost' );
@@ -96,7 +96,7 @@ nicely:
 if ( ! $wp )
     {
     # deal with it. Note that there should be an error message in
-    # $Business::OnlinePayment::WorldPay::Junior::errstr detailing why it failed.
+    # $Business::WorldPay::Junior::errstr detailing why it failed.
     }
 
 Once you have initialised the module you can carry on to either register a
