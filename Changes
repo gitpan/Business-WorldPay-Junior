@@ -1,5 +1,8 @@
 Revision history for Perl extension Business::WorldPay::Junior.
 
+1.07  Thu Oct 30 17:30:00 2003
+	- Worldpay have a new range of callback servers IPs
+
 1.06  Fri Mar 14 15:30:00 2003
 	- Updated documentation to reflect name change properly.
 

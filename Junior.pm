@@ -23,7 +23,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw( ) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw( new register authorised callback errstr valid_callback_host );
-our $VERSION = '1.06';
+our $VERSION = '1.07';
 
 my %args = ();
 
@@ -441,26 +441,18 @@ sub valid_callback_host
     $errstr = "not 4 . separated digits", return if $host !~ /(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/;
 
     my $fail = undef;
+    
+    my $lead = $1 . '.' . $2 . '.' . $3;
 
-    if ( $1 != 195 )
+    if ( $lead ne "195.35.90" && $lead ne "155.136.68" && $lead ne "193.41.220" )
         {
         $fail = 1;
-        $errstr .= "Octet 1 failed ";
+        $errstr .= "Invalid Callback Network";
         }
-    if ( $2 != 35 )
+    if ( $4 < 0 || $4 > 255 )
         {
         $fail = 1;
-        $errstr .= "Octet 2 failed ";
-        }
-    if ( $3 < 90 || $3 > 91 )
-        {
-        $fail = 1;
-        $errstr .= "Octet 3 failed ";
-        }
-    if ( $4 < 1 || $4 > 254 )
-        {
-        $fail = 1;
-        $errstr .= "Octet 4 failed ";
+        $errstr .= "Invalid Callback Host";
         }
     return if $fail;
     
